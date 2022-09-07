@@ -4,6 +4,8 @@
       <div class="flex flex-col p-8 items-center">
         <div>
           <%= I18n.l(Time.parse(i[0][0].to_s), format: "%-l %p") %>
+        </div>
+        <div class="w-full">
           <%= image_tag i[0][1][:icon] + ".svg" %>
         </div>
         <div>
@@ -17,12 +19,14 @@
   
   <div class="flex w-full justify-between divide-x">
     <% @forecast_json[:daily].each do |k, v| %>
-      <div class="flex flex-col p-8 items-center">
+      <div class="flex flex-col p-8 items-center w-1/7">
         <div>
           <%= v[:weekday] %>
         </div>
-        <div>
+        <div class="w-full">
           <%= v[:weather] %>
+        </div>
+        <div class="w-full">
           <%= image_tag v[:weather].downcase.gsub(" ", "-") + "-day.svg" %>
         </div>
         <div>
