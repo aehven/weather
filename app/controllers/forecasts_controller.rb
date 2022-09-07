@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ForecastsController < ApplicationController
-  before_action :set_forecast, only: %i[show edit update destroy]
-
   # GET /forecasts or /forecasts.json
   def index
     # @forecasts = Forecast.all
@@ -10,7 +8,9 @@ class ForecastsController < ApplicationController
   end
 
   # GET /forecasts/1 or /forecasts/1.json
-  def show; end
+  def show
+    @forecast_json = OpenMeteo.new.fetch
+  end
 
   # GET /forecasts/new
   def new
@@ -59,11 +59,6 @@ class ForecastsController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_forecast
-    @forecast = Forecast.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def forecast_params

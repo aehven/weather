@@ -3,7 +3,6 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <% if false %>
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Forecasts</h1>
     <%= link_to 'New forecast', new_forecast_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
@@ -11,26 +10,5 @@
 
   <div id="forecasts" class="min-w-full">
     <%= render @forecasts %>
-  </div>
-  <% end %>
-
-  <div class="flex w-full justify-between divide-x">
-    <% @forecast_json[:daily].each do |k, v| %>
-      <div class="flex flex-col p-8 items-center">
-        <div>
-          <%= v[:weekday] %>
-        </div>
-        <div>
-          <%= v[:weather] %>
-          <%= image_tag v[:weather].downcase.gsub(" ", "-") + "-day.svg" %>
-        </div>
-        <div>
-          <%= v[:max_temperature][:fahrenheit] %>
-        </div>
-        <div>
-          <%= v[:min_temperature][:fahrenheit] %>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>
