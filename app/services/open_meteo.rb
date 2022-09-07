@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OpenMeteo
   def fetch
     # require 'net/http'

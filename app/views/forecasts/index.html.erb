@@ -22,6 +22,7 @@
         </div>
         <div>
           <%= v[:weather] %>
+          <%= image_tag v[:weather].downcase.gsub(" ", "-") + "-day.svg" %>
         </div>
         <div>
           <%= v[:max_temperature][:fahrenheit] %>
