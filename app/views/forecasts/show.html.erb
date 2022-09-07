@@ -3,7 +3,7 @@
     <% @forecast_json[:daily].first[1][:hourly].each_slice(3) do |i| %>
       <div class="flex flex-col p-8 items-center">
         <div>
-          <%= i[0][0] %>
+          <%= I18n.l(Time.parse(i[0][0].to_s), format: "%-l %p") %>
           <%= image_tag i[0][1][:icon] + ".svg" %>
         </div>
         <div>
