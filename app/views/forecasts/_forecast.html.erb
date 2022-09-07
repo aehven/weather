@@ -1,0 +1,7 @@
+<div id="<%= dom_id forecast %>">
+  <% if action_name != "show" %>
+    <%= link_to "Show this forecast", forecast, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this forecast', edit_forecast_path(forecast), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
