@@ -9,7 +9,7 @@
           <%= image_tag i[0][1][:icon] + ".svg" %>
         </div>
         <div>
-          <%= i[0][1][:temperature][:fahrenheit] %>
+          <%= i[0][1][:temperature][:fahrenheit].round %>
         </div>
       </div>
     <% end %>
@@ -30,10 +30,10 @@
           <%= image_tag v[:weather].downcase.gsub(" ", "-") + "-day.svg" %>
         </div>
         <div>
-          <%= v[:max_temperature][:fahrenheit] %>
+          <%= v[:max_temperature][:fahrenheit].round %>
         </div>
         <div>
-          <%= v[:min_temperature][:fahrenheit] %>
+          <%= v[:min_temperature][:fahrenheit].round %>
         </div>
       </div>
     <% end %>
